@@ -1,0 +1,23 @@
+
+|{% extends "base.html" %}
+
+| {% load i18n static %}
+
+| {% block extrastyle %}
+|   <link rel="stylesheet" type="text/css" href="{% static "public/css/admin.css" %}" />
+| {% endblock %}
+
+| {% block content %}
+
+#app-container
+
+| {% endblock %}
+
+
+| {% block js %}
+|   <script src="{% static 'public/js/admin.js' %}"></script>
+|   <script type="text/javascript">
+|       alertify.defaults.theme.ok = "btn btn-success";
+|       alertify.defaults.theme.cancel = "ui black button";
+|   </script>
+| {% endblock %}
