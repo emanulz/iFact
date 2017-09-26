@@ -17,7 +17,7 @@ export default class TopBar extends React.Component {
 
     // ALERTIFY CONFIRM
     alertify.confirm('Cerrar Sesión', `¿Desea Cerrar su sesión en el sistema?`, function() {
-      window.location.replace('/login/logout')
+      window.location.replace('/logout')
     }, function() {
       return true
     }).set('labels', {

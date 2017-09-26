@@ -4,6 +4,7 @@
 | {% load i18n static %}
 
 | {% block extrastyle %}
+|   <link rel="stylesheet" href="{% static "public/vendor/font-awesome/css/font-awesome.min.css" %}" />
 |   <link rel="stylesheet" type="text/css" href="{% static "public/css/admin.css" %}" />
 | {% endblock %}
 
@@ -14,9 +15,10 @@
 
 
 | {% block js %}
+|   <script type='application/javascript' src="http://localhost:35729/livereload.js"></script>
 |   <script src="{% static 'public/js/admin.js' %}"></script>
 |   <script type="text/javascript">
 |       alertify.defaults.theme.ok = "btn btn-success";
-|       alertify.defaults.theme.cancel = "ui black button";
+|       alertify.defaults.theme.cancel = "btn btn-danger";
 |   </script>
 | {% endblock %}

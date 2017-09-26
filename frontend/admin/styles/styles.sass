@@ -12,7 +12,26 @@
 @import "reset"
 @import "adminVars"
 
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro')
+@import url(http://weloveiconfonts.com/api/?family=fontawesome|fontelico|typicons)
 
+/* fontawesome */
+[class*="fontawesome-"]:before
+  font-family: 'FontAwesome', sans-serif
+
+
+/* fontelico */
+[class*="fontelico-"]:before
+  font-family: 'fontelico', sans-serif
+
+
+/* typicons */
+[class*="typicons-"]:before
+  font-family: 'Typicons', sans-serif
+
+.btn
+  font-family: 'Source Sans Pro', sans-serif
+  font-size: 14px
 //defaults
 .mainContainer
     width: calc(100% - 250px)

@@ -11,12 +11,6 @@ def profile_get(request):
     user = request.user
     profile = request.user.profile
 
-    context = {'user': user,
-               'profile': profile
-               }
-
-    print (context)
-
     data = serializers.serialize('json', [user, profile])
 
     if request.method == 'GET':

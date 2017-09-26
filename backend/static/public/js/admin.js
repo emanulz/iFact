@@ -32751,7 +32751,7 @@ var TopBar = function (_React$Component) {
 
       // ALERTIFY CONFIRM
       _alertifyjs2.default.confirm('Cerrar Sesión', '\xBFDesea Cerrar su sesi\xF3n en el sistema?', function () {
-        window.location.replace('/login/logout');
+        window.location.replace('/logout');
       }, function () {
         return true;
       }).set('labels', {
@@ -33149,6 +33149,14 @@ var User = (_dec = (0, _reactRedux.connect)(function (store) {
     value: function componentWillMount() {
       this.props.dispatch((0, _actions.fecthProfile)());
     }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.props.user) {
+        document.getElementById('loader').classList.remove('loader');
+      }
+    }
+
     // Main Layout
 
   }, {
@@ -33158,6 +33166,9 @@ var User = (_dec = (0, _reactRedux.connect)(function (store) {
       var name = this.props.user.first_name ? this.props.user.first_name : 'Administrador';
       var lastName = this.props.user.last_name ? this.props.user.last_name : 'Sistema';
       var avatar = this.props.profile.avatar ? '/media/' + this.props.profile.avatar : '/media/profile.jpg';
+
+      var fullName = name + ' ' + lastName;
+      if (fullName.length > 15) fullName = fullName.substring(0, 15);
 
       return _react2.default.createElement(
         'div',
@@ -33173,14 +33184,14 @@ var User = (_dec = (0, _reactRedux.connect)(function (store) {
           _react2.default.createElement(
             'span',
             null,
-            name + ' ' + lastName
+            fullName
           ),
           _react2.default.createElement('hr', null)
         ),
         _react2.default.createElement(
           'div',
           { className: 'sideMenu-user-lock' },
-          _react2.default.createElement('span', { className: 'fa fa-lock' })
+          _react2.default.createElement('span', { className: 'fontawesome-lock' })
         )
       );
     }
