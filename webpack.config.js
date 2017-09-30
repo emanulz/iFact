@@ -10,6 +10,8 @@ const config = {
 }
 
 const jsConfig = Object.assign({}, config, {
+  context: __dirname,
+  devtool: debug ? 'inline-sourcemap' : '',
   name: 'js',
   entry: {
     // landing: './frontend/landing/app.js',
@@ -45,6 +47,8 @@ const jsConfig = Object.assign({}, config, {
 })
 
 const stylesConfig = Object.assign({}, config, {
+  context: __dirname,
+  devtool: debug ? 'inline-sourcemap' : '',
   name: 'styles',
   entry: {
     // landing: './frontend/landing/main.sass',
